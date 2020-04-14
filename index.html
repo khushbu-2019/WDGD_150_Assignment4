@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery and the Weather</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <link href="https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <h1>jQuery and the Weather</h1>
+
+  <table align="center">
+    <tr>
+      <td>Location</th>
+      <td> <div id="location"></div></td>
+    </tr>
+    <tr>
+      <td>Conditions</th> 
+      <td> <div id="conditions"></div></td>
+    </tr>
+    <tr colspan="3">
+      <td colspan="3">  <div id="icon"></div></td>
+    </tr>
+    <tr>
+      <td>Temperature</th>
+      <td><div id="temperature"></div></td>
+    </tr>
+    <tr>
+      <td>Humidity</th>
+      <td><div id="humidity"></div></td>
+    </tr>
+    <tr>
+      <td>Wind Speed</th>
+      <td> <div id="speed"></div></td>
+    </tr>
+  </table>
+
+  <script>
+
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=e58cc87201b9e85b47c6ad90bb23f1e4&units=metric"; 
+
+  $(document).ready(function(){
+
+    $.getJSON(
+      url,
+      function(data){
+
+          console.log(data);
+
+        // Create variables to help with setting html contents
+        // Look at the console to see the structure of the "data" parameter
+        
+        // create a variable for the "conditions"
+        // create a variable for the "temperature"
+        // etc.
+        var location = data.name;
+        var conditions = data.weather[0].main;
+        var temperature = data.main.temp;
+        var humidity = data.main.humidity;
+        var speed = data.wind.speed;
+        var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+
+
+        // Write jQuery to select the div's created above and
+        // set their html contents using the variables created
+        // You might need to construct a tag around your variable,
+        // for example for the icon, you will need <img src= ....>
+        // to properly display the icon
+        
+        $('#location').html(location);
+        $('#conditions').html(conditions);
+        $('#temperature').html(temperature+ "&deg;C");
+        $('#humidity').html(humidity +"%");
+        $('#speed').html(speed +"km/hr");
+        $('#icon').html("<img src=' " + icon + " '" + "alt='alternate text'" + ">");
+
+
+      }
+    );
+
+  });
+
+
+    </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+html {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;  
+    background-color: azure;
+    background-image: url(../img/image1.jpg) /**Photo by Berkay Gumustekin on Unsplash***/
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    border-left: none;
+
+}
+
+body {
+    border-radius: 4px;
+    font-size: 25pt;
+    text-align: center;
+}
+
+h1 {
+    display: block;
+    padding: 15px;
+    text-shadow: 1px 1px whitesmoke;
+    color: rgb(231, 70, 12);
+    font-weight: 800;
+    margin: 0 10px;
+    transition: all .5s;
+    font-family: 'Kelly Slab', cursive;
+    font-size: 40pt;
+
+    }
+    
+h1:hover {
+    color: rgb(228, 136, 103);
+    transition: all 0.5s;
+    }
+
+table {
+    width: 30%;
+    border: 4px solid rgb(248, 232, 207);
+    border-radius: 6px;
+    background-color: rgb(219, 219, 218); opacity:0.9 ;
+    box-shadow: 3px 2px 3px 2px;
+    border-spacing: 10px;
+}
+
+td:hover {
+    background-color: rgb(137, 137, 184); 
+    color: white;
+}
